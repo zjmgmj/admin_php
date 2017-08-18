@@ -1,7 +1,9 @@
 <?php
-$path = "F:/wamp/tmp/admin/uploads/";
+define('ROOT',dirname(dirname(__FILE__)).'');
+$path = "\\temp\\uploads\\";
 
 $extArr = array("jpg", "png", "gif");
+$image_name='';
 
 if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
 	$name = $_FILES['post_pic']['name'];
@@ -22,7 +24,8 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
 	}
 	$image_name = time().rand(100,999).".".$ext;
 	$tmp = $_FILES['post_pic']['tmp_name'];
-	if(move_uploaded_file($tmp, $path.$image_name)){
+	if(move_uploaded_file($tmp, ROOT.$path.$image_name)){
+		$paths="/temp/uploads/".$image_name;
 		echo '<img src="'.$path.$image_name.'"  class="preview">';
 	}else{
 		echo '上传出错了！';

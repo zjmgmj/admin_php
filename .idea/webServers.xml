@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="0b7ba785-9eb6-4b76-9ad1-aed5dff15165" name="mr17wAdmin" url="http://mr17w.com">
+        <fileTransfer host="mr17w.com" port="21" rootFolder="/public_html" password="df98df9fdfc3dfdadfdadfe8dfe7dffedfe2df8edfdadf9ddfeadfd8" username="zhjmgmj">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

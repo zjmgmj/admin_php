@@ -18,12 +18,13 @@ $post_type=$_POST['post_type'];
 $_POST['post_status'] ? $post_status=$_POST['post_status'] : $post_status='' ;
 $_POST['post_user'] ? $post_user=$_POST['post_user'] : $post_user='' ;
 
+
+/*图片上传*/
 include "img.php";
 
-$sql="INSERT INTO posts (id,post_author,post_time,post_title,post_content,post_status,post_user,post_type,post_update_time) 
-VALUES ('{$id}','{$post_author}','{$post_time}','{$post_title}','{$post_content}','{$post_status}','{$post_user}','{$post_type}','{$post_update_time}')";
-//$sql="INSERT INTO USER (id,user,password) VALUES ('1','zhjm','zhjm520');";
-/*,titel2,types,content,author,sources,author,sources,comment*/
+$sql="INSERT INTO posts (id,post_author,post_time,post_title,post_content,post_status,post_user,post_type,post_update_time,post_pic) 
+VALUES ('{$id}','{$post_author}','{$post_time}','{$post_title}','{$post_content}','{$post_status}','{$post_user}','{$post_type}','{$post_update_time}','{$paths}')";
+
 $result=mysqli_multi_query($conn, $sql);
 if(!$result){
 	echo "上传失败";

@@ -104,12 +104,15 @@ $.ajax({
 	type:"post",
 	url:"/admin/data/article_list.php",
 	async:true,
+	dataType: 'json',
 	beforeSend:function () {
 		layer.load(2);
 	},
 	success:function(res){
 		layer.closeAll('loading');
-		var obj = eval( '(' + res + ')' );  
+		//var obj = eval( '(' + res + ')' );
+		console.log(res);
+		var obj=res;
 			for(var i in obj.post){
 				html=html+'<tr class="text-c checks">'+
 					'<td><input type="checkbox" value="" name=""></td>'+

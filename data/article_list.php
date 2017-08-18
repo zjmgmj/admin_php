@@ -15,7 +15,7 @@ if($opt==''){
         exit();
     }
     while ($row = mysqli_fetch_array($result)) {
-        $post = array('id' => $row["ID"], 'post_author' => $row["post_author"], 'post_update_time' => $row["post_update_time"], 'post_title' => $row["post_title"], 'post_content' => $row["post_content"], 'post_status' => $row["post_status"], 'post_user' => $row["post_user"], 'post_type' => $row["post_type"]);
+        $post = array('id' => $row["ID"], 'post_author' => $row["post_author"], 'post_update_time' => $row["post_update_time"], 'post_title' => $row["post_title"], 'post_content' => $row["post_content"], 'post_status' => $row["post_status"], 'post_user' => $row["post_user"], 'post_type' => $row["post_type"],'post_pic'=>$row["post_pic"]);
         $data[] = $post;
     }
 
