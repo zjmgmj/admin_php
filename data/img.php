@@ -1,10 +1,10 @@
 <?php
-define('ROOT',dirname(dirname(__FILE__)).'');
-$path = "\\temp\\uploads\\";
+define('ROOT',dirname(dirname(__FILE__)).'/');
+$path = "/temp/uploads/";
 
 $extArr = array("jpg", "png", "gif");
 $image_name='';
-
+$paths='';
 if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
 	$name = $_FILES['post_pic']['name'];
 	$size = $_FILES['post_pic']['size'];
@@ -25,10 +25,11 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
 	$image_name = time().rand(100,999).".".$ext;
 	$tmp = $_FILES['post_pic']['tmp_name'];
 	if(move_uploaded_file($tmp, ROOT.$path.$image_name)){
-		$paths="/temp/uploads/".$image_name;
-		echo '<img src="'.$path.$image_name.'"  class="preview">';
+		$paths=$path.$image_name;
+		echo $paths;
 	}else{
 		echo '上传出错了！';
+		exit;
 	}
 	//exit;
 }
