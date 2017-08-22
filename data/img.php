@@ -18,15 +18,16 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
 		echo '图片格式错误！';
 		exit;
 	}
-	if($size>(100*1024)){
+	/*if($size>(100*1024)){
 		echo '图片大小不能超过100KB';
 		exit;
-	}
+	}*/
 	$image_name = time().rand(100,999).".".$ext;
 	$tmp = $_FILES['post_pic']['tmp_name'];
 	if(move_uploaded_file($tmp, ROOT.$path.$image_name)){
-		$paths=$path.$image_name;
-		echo $paths;
+		$paths='/admin'.$path.$image_name;
+		//$paths=ROOT.$path.$image_name;
+		//echo $paths;
 	}else{
 		echo '上传出错了！';
 		exit;

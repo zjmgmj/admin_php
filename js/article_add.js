@@ -205,12 +205,7 @@ function article_save_submit(ue){
 		});
 }
 
-function getDate(){
-	var myDate=new Date();
-	var Month=parseInt(myDate.getMonth())+1;
-	var time=myDate.getFullYear()+'-'+Month+'-'+myDate.getDate()+' '+myDate.getHours()+':'+myDate.getMinutes()+':'+myDate.getSeconds();
-	return time;
-}
+
 $.ajax({
 	type:"post",
 	url:"/admin/data/system-category-add.php",

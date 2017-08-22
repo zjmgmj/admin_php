@@ -2,7 +2,7 @@
 
 
 /*本地连接*/
- $dbhost = "localhost";
+$dbhost = "localhost";
 $username = "root";
 $userpass = "888888";
 $dbdatabase = "admin";
